@@ -8,7 +8,7 @@ static struct task_struct *thread_st;
 //fn executed by the kernel thread
 static int thread_fn(void *unused)
 {
-	while(1)
+	while(!thread_should_stop())
 	{
 		printk(KERN_INFO "Thread Running\n");
 		ssleep(5);
